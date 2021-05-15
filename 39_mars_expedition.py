@@ -7,7 +7,7 @@
 import sys
 sys.stdin = open("input.txt")
 
-from collections import deque
+import heapq
 
 def can_move(cur, matrix):
     cand = []
@@ -25,10 +25,10 @@ def dijkstra(matrix, start):
         for j in range(len(matrix)-2):
             distances[(i+1,j+1)] = int('100')
     distances[start] = matrix[start[0]][start[1]]
-    que = deque([[distances[start], start]])
+    que = [(distances[start], start)]
 
     while que:
-        curr_dist, curr_dest = que.popleft()
+        curr_dist, curr_dest = heapq.heappop(que)
 
         if distances[curr_dest] < curr_dist:
             continue
@@ -37,9 +37,9 @@ def dijkstra(matrix, start):
             next_dist = curr_dist + matrix[next_dest[0]][next_dest[1]]
             if next_dist < distances[next_dest]:
                 distances[next_dest] = next_dist
-                que.append([next_dist, next_dest])
+                heapq.heappush(que, [next_dist, next_dest])
     return distances
-    
+
 
 # test num
 T = int(input())
@@ -56,4 +56,3 @@ for _ in range(T):
     end = (N,N)
     answer = dijkstra(matrix, start)
     print(answer[end])
-
