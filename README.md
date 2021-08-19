@@ -1,5 +1,3 @@
-## algorithm_study in 2021
-#### Hanyang Univ. Computer Software Department (MS degree)
-#### LEE SEUNG JAE 
-##### reference book: "This is coding test" by Dong Bin Na. 
-##### reference site: https://programmers.co.kr (Programmers)
+## Algorithm_study in 2021 @ Hanyang Univ. 
+##### Referenced book: "This is coding test" by Dong Bin Na. 
+##### Referenced site: https://programmers.co.kr (Programmers)
